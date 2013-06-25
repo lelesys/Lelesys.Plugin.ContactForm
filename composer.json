@@ -1,5 +1,5 @@
 {
-	"name": "lelesys/plugin-contactform",
+	"name": "lelesys/plugin-contact-form",
 	"description": "Contact Form plugin for TYPO3 Neos",
 	"license": "LGPL-3.0+",
 	"type":"typo3-flow-plugin",
