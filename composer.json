@@ -13,7 +13,8 @@
 	"require": {
 		"typo3/flow":"*",
 		"typo3/neos":"*",
-		"typo3/swiftmailer": "dev-master"
+		"typo3/swiftmailer": "dev-master",
+		"typo3/formbuilder": "dev-master"
 	},
 	"autoload":{
 		"psr-0":{
