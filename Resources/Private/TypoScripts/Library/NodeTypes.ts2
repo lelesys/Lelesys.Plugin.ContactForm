@@ -1,0 +1,12 @@
+prototype(Lelesys.Plugin.ContactForm:ContactForm) < prototype(TYPO3.Neos:Template)
+prototype(Lelesys.Plugin.ContactForm:ContactForm) {
+	@class = 'Lelesys\\Plugin\\ContactForm\\TypoScript\\ContactFormImplementation'
+	templatePath = 'resource://Lelesys.Plugin.ContactForm/Private/Templates/TypoScript/ContactForm.html'
+	formIdentifier = ${q(node).property('formIdentifier')}
+	formIdentifier2 = ${q(node).property('formIdentifier')}
+}
+
+prototype(Lelesys.Plugin.ContactForm:FormPost) < prototype(TYPO3.Neos:Template)
+prototype(Lelesys.Plugin.ContactForm:FormPost) {
+	templatePath = 'resource://Lelesys.Plugin.ContactForm/Private/Templates/TypoScript/PostForm.html'
+}

@@ -1,0 +1,31 @@
+
+'Lelesys.Plugin.ContactForm:ContactForm':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Lelesys Contact Form'
+    group: Plugins
+    inlineEditable: true
+    icon:
+      light: Images/Icons/White/columns_icon-16.png
+      dark: Images/Icons/Black/columns_icon-16.png
+    inspector:
+      groups:
+        contactform:
+          label: Contact Form
+          priority: 30
+  properties:
+    formIdentifier:
+      type: string
+      ui:
+        label: 'Form lists'
+        inspector:
+          group: contactform
+        reloadIfChanged: true
+'Lelesys.Plugin.ContactForm:FormPost':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Form Post'
+    group: Plugins
+    inlineEditable: true

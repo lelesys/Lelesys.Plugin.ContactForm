@@ -1,0 +1,9 @@
+div.actions .form-navigation ul {
+    margin: 0;
+	list-style: none;
+}
+
+#captcha-image {
+	width: 220px;
+}
+

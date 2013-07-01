@@ -1,0 +1,12 @@
+{namespace t=TYPO3\Neos\ViewHelpers}
+{namespace form=TYPO3\Form\ViewHelpers}
+<t:contentElement node="{node}">
+	<f:if condition="{formIdentifier2}">
+		<f:then>
+			<form:render persistenceIdentifier="{formIdentifier2}" presetName="contactForm" />
+		</f:then>
+		<f:else>
+			<p>Please add the form from contact form inspector</p>
+		</f:else>
+	</f:if>
+</t:contentElement>

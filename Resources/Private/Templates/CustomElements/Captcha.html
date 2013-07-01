@@ -1,0 +1,6 @@
+{namespace captcha =Lelesys\Captcha\ViewHelpers}
+<f:layout name="TYPO3.Form:Field" />
+<f:section name="field">
+	<f:form.textfield property="{element.identifier}" id="{element.uniqueIdentifier}" class="{element.properties.elementClassAttribute}" placeholder="{element.properties.placeholder}" errorClass="{element.properties.elementErrorClassAttribute}" />
+	<div><captcha:captcha></captcha:captcha></div>
+</f:section>
