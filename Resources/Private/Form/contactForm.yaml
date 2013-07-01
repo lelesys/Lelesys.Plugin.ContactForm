@@ -1,0 +1,71 @@
+type: 'TYPO3.Form:Form'
+identifier: contactForm
+label: contactForm
+renderingOptions:
+    submitButtonLabel: Submit
+renderables:
+    -
+        type: 'TYPO3.Form:Page'
+        identifier: mypage
+        label: Contact form
+        renderables:
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: name
+                label: Name
+                validators:
+                    -
+                        identifier: 'TYPO3.Flow:NotEmpty'
+                properties:
+                    placeholder: name
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: email
+                label: Email
+                validators:
+                    -
+                        identifier: 'TYPO3.Flow:NotEmpty'
+                    -
+                        identifier: 'TYPO3.Flow:EmailAddress'
+                properties:
+                    placeholder: 'e.g lelesys@lelesys.com'
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:MultiLineText'
+                identifier: message
+                label: Message
+                validators:
+                    -
+                        identifier: 'TYPO3.Flow:NotEmpty'
+                properties:
+                    placeholder: 'message here'
+                defaultValue: ''
+            -
+                type: 'Lelesys.Plugin.ContactForm:Captcha'
+                identifier: captcha
+                label: Captcha
+                validators:
+                    -
+                        identifier: 'TYPO3.Flow:NotEmpty'
+                    -
+                        identifier: 'Lelesys.Captcha:Captcha'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+finishers:
+    -
+        identifier: 'TYPO3.Form:Email'
+        options:
+            templatePathAndFilename: resource://Lelesys.Plugin.ContactForm/Private/Templates/ContactForm/Message.txt
+            subject: Contact Information
+            recipientAddress: santosh.gali@lelesys.com
+            recipientName: 'santosh '
+            senderAddress: clinton.gomes@lelesys.com
+            senderName: clinton
+            replyToAddress: clinton.gomes@lelesys.com
+            format: plaintext
+    -
+        identifier: 'Lelesys.Plugin.ContactForm:PostValues'
+    -
+        identifier: 'TYPO3.Form:Confirmation'

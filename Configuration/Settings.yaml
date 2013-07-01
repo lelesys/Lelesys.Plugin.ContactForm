@@ -1,5 +1,7 @@
 TYPO3:
   Form:
+    yamlPersistenceManager:
+      savePath: 'resource://Lelesys.Plugin.ContactForm/Private/Form/'
     presets:
       contactForm:
         title: 'ContactForm Elements'

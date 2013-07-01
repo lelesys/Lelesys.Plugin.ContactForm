@@ -17,8 +17,9 @@
   properties:
     formIdentifier:
       type: string
+      defaultValue: 'contactForm'
       ui:
-        label: 'Form lists'
+        label: 'Form Identifier'
         inspector:
           group: contactform
         reloadIfChanged: true

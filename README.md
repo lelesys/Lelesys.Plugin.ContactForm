@@ -13,3 +13,5 @@ include: resource://Lelesys.Plugin.ContactForm/Private/TypoScripts/Library/NodeT
 ```
 
 * Add the plugin content element "Lelesys Contact Form" to the position of your choice.
+* Give form identifier i.e "contactForm" in inspector to render the default form.
+* Form fields can be edited from (located in 'resource://Lelesys.Plugin.ContactForm/Private/Form/contactForm.yaml');
