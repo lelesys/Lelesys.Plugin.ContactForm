@@ -7,3 +7,17 @@ div.actions .form-navigation ul {
 	width: 220px;
 }
 
+#contactForm .error {
+	margin-bottom: 0;
+}
+
+#contactForm .help-inline {
+	margin-bottom: 5px;
+	color: #FF0000;
+	display: block;
+	padding-left: 0;
+}
+
+#contactForm .actions {
+	margin-top: 10px;
+}
