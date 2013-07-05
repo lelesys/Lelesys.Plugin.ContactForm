@@ -23,10 +23,12 @@
         inspector:
           group: contactform
         reloadIfChanged: true
+    formName:
+      type: string
+      defaultValue: 'Default Form'
 'Lelesys.Plugin.ContactForm:FormPost':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
     label: 'Form Post'
-    group: Plugins
     inlineEditable: true

@@ -1,0 +1,18 @@
+<f:layout name="Default" />
+
+<f:section name="subtitle">
+</f:section>
+<f:section name="Content">
+	<div class="row neos-module-container">
+		<div class="span5">
+			<legend>{formIdentifier}</legend>
+			<br />
+			<f:for each="{formPost.properties}" key="label" as="value">
+				<p>
+					<label>{label}</label>
+					{value}
+				</p>
+			</f:for>
+		</div>
+	</div>
+</f:section>

@@ -4,7 +4,7 @@
 <f:section name="Content">
 	<h1>Contact Form List</h1>
 		<div class="row neos-module-container indented">
-			<f:if condition="{nodeTypes}">
+			<f:if condition="{forms}">
 				<f:then>
 					<table class="table">
 						<thead>
@@ -14,10 +14,10 @@
 							</tr>
 						</thead>
 						<tbody>
-							<f:for each="{nodeTypes}" as="node">
+							<f:for each="{forms}" as="form">
 								<tr>
 									<td>
-										<f:link.action action="listFormPosts" arguments="{node: node}" title="List form posts">{node.properties.formIdentifier}</f:link.action>
+										<f:link.action action="listFormPosts" arguments="{formNode: form}" title="List form posts">{form.properties.formName}</f:link.action>
 									</td>
 								</tr>
 							</f:for>

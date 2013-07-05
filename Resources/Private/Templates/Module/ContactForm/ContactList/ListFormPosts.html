@@ -2,28 +2,38 @@
 <f:layout name="Default" />
 
 <f:section name="Content">
-	<h1>Form Posts {formIdentifier}</h1>
+	<h1>Form Posts: {formIdentifier}</h1>
 	<div class="row neos-module-container indented">
-		<f:if condition="{nodeTypes}">
+		<f:if condition="{formPosts}">
 			<f:then>
 				<table class="table">
 					<thead>
 					</thead>
 					<tbody>
-					<f:for each="{nodeTypes}" as="node" iteration="itemIteration">
+					<f:for each="{formPosts}" as="formPost" iteration="itemIteration">
 						<f:if condition="{itemIteration.isFirst}">
-							<f:then>
-								<tr>
-								<f:for each="{node.properties}" key="label" as="value">
-									<th>{label}</th>
+							<tr>
+								<f:for each="{formPost.properties}" key="label" as="value" iteration="labelIteration">
+									<f:if condition="{labelIteration.index} <= 1">
+										<th>{label}</th>
+									</f:if>
 								</f:for>
-								</tr>
-							</f:then>
+								<th>&nbsp;</th>
+							</tr>
 						</f:if>
 						<tr>
-							<f:for each="{node.properties}" key="label" as="value">
-								<td>{value}</td>
+							<f:for each="{formPost.properties}" key="label" as="value" iteration="valueIteration">
+								<f:if condition="{valueIteration.index} <= 1">
+									<td>{value}</td>
+								</f:if>
 							</f:for>
+							<td>
+								<div class="pull-right">
+									<f:link.action action="show" arguments="{formPost: formPost, formIdentifier: formIdentifier}" class="btn neos-button" title="Click to view">
+										<i class="icon-info-sign icon-white"></i>
+									</f:link.action>
+								</div>
+							</td>
 						</tr>
 					</f:for>
 					</tbody>

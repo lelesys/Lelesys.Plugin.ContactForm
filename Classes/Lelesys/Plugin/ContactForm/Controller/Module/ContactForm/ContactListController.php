@@ -25,19 +25,29 @@ class ContactListController extends \TYPO3\Neos\Controller\Module\StandardContro
 	 */
 	public function indexAction() {
 		$this->setContext();
-		$nodeTypes = $this->nodeRepository->findByNodeType('Lelesys.Plugin.ContactForm:ContactForm');
+		$forms = $this->nodeRepository->findByNodeType('Lelesys.Plugin.ContactForm:ContactForm');
 
-		$this->view->assign('nodeTypes', $nodeTypes);
+		$this->view->assign('forms', $forms);
 	}
 
 	/**
 	 * Returns the form post values
 	 *
-	 * @param \TYPO3\TYPO3CR\Domain\Model\PersistentNodeInterface $node
+	 * @param \TYPO3\TYPO3CR\Domain\Model\PersistentNodeInterface $formNode
 	 * @return void
 	 */
-	public function listFormPostsAction(\TYPO3\TYPO3CR\Domain\Model\PersistentNodeInterface $node) {
-		$this->view->assignMultiple(array ('formIdentifier' => $node->getProperty('formIdentifier'), 'nodeTypes' => $node->getChildNodes('Lelesys.Plugin.ContactForm:FormPost')));
+	public function listFormPostsAction(\TYPO3\TYPO3CR\Domain\Model\PersistentNodeInterface $formNode) {
+		$this->view->assignMultiple(array ('formIdentifier' => $formNode->getProperty('formIdentifier'), 'formPosts' => $formNode->getChildNodes('Lelesys.Plugin.ContactForm:FormPost')));
+	}
+
+	/**
+	 * Shows the form post detail view
+	 *
+	 * @param \TYPO3\TYPO3CR\Domain\Model\PersistentNodeInterface $formPost
+	 * @param string $formIdentifier The form identifier
+	 */
+	public function showAction(\TYPO3\TYPO3CR\Domain\Model\PersistentNodeInterface $formPost, $formIdentifier) {
+		$this->view->assignMultiple(array('formPost' => $formPost, 'formIdentifier' => $formIdentifier));
 	}
 
 	/**
