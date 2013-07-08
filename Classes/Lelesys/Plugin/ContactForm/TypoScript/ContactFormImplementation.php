@@ -1,4 +1,5 @@
 <?php
+
 namespace Lelesys\Plugin\ContactForm\TypoScript;
 
 /*                                                                         *
@@ -8,12 +9,14 @@ namespace Lelesys\Plugin\ContactForm\TypoScript;
  * the terms of the GNU Lesser General Public License, either version 3    *
  * of the License, or (at your option) any later version.                  *
  *                                                                         */
+
 use TYPO3\Flow\Annotations as Flow;
+
 /**
  * ContactForm TypoScript object implementation
  * @Flow\Scope("prototype")
  */
-class ContactFormImplementation extends  \TYPO3\TypoScript\TypoScriptObjects\TemplateImplementation {
+class ContactFormImplementation extends \TYPO3\TypoScript\TypoScriptObjects\TemplateImplementation {
 
 	/**
 	 * @Flow\Inject
@@ -52,5 +55,7 @@ class ContactFormImplementation extends  \TYPO3\TypoScript\TypoScriptObjects\Tem
 		$this->formRegistry->setFormNode($this->getFormIdentifier(), $context['node']);
 		return parent::evaluate();
 	}
+
 }
+
 ?>

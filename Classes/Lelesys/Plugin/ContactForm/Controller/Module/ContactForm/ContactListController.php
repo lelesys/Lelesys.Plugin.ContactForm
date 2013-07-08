@@ -1,9 +1,13 @@
 <?php
+
 namespace Lelesys\Plugin\ContactForm\Controller\Module\ContactForm;
 
 /*                                                                         *
  * This script belongs to the Lelesys Plugins "Lelesys.Plugin.ContactForm".*
  *                                                                         *
+ * It is free software; you can redistribute it and/or modify it under     *
+ * the terms of the GNU Lesser General Public License, either version 3    *
+ * of the License, or (at your option) any later version.                  *
  *                                                                         */
 
 use TYPO3\Flow\Annotations as Flow;
@@ -26,7 +30,6 @@ class ContactListController extends \TYPO3\Neos\Controller\Module\StandardContro
 	public function indexAction() {
 		$this->setContext();
 		$forms = $this->nodeRepository->findByNodeType('Lelesys.Plugin.ContactForm:ContactForm');
-
 		$this->view->assign('forms', $forms);
 	}
 
@@ -37,7 +40,7 @@ class ContactListController extends \TYPO3\Neos\Controller\Module\StandardContro
 	 * @return void
 	 */
 	public function listFormPostsAction(\TYPO3\TYPO3CR\Domain\Model\PersistentNodeInterface $formNode) {
-		$this->view->assignMultiple(array ('formIdentifier' => $formNode->getProperty('formIdentifier'), 'formPosts' => $formNode->getChildNodes('Lelesys.Plugin.ContactForm:FormPost')));
+		$this->view->assignMultiple(array('formIdentifier' => $formNode->getProperty('formIdentifier'), 'formPosts' => $formNode->getChildNodes('Lelesys.Plugin.ContactForm:FormPost')));
 	}
 
 	/**
