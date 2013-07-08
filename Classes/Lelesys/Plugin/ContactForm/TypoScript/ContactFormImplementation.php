@@ -3,7 +3,7 @@
 namespace Lelesys\Plugin\ContactForm\TypoScript;
 
 /*                                                                         *
- * This script belongs to the Lelesys Plugins "Lelesys.Plugin.ContactForm".*
+ * This script belongs to the package "Lelesys.Plugin.ContactForm".        *
  *                                                                         *
  * It is free software; you can redistribute it and/or modify it under     *
  * the terms of the GNU Lesser General Public License, either version 3    *
