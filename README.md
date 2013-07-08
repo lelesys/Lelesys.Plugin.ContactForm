@@ -21,4 +21,19 @@ include: resource://Lelesys.Plugin.ContactForm/Private/TypoScripts/Library/NodeT
 ```
 
 * add the plugin content element "Lelesys Contact Form" to the position of your choice.
-* give form identifier i.e "contactForm" in inspector to render the default form.
+* if form is not rendered give form identifier i.e "contactForm" in inspector to render the default form.
+
+* to create your own form create a yaml file with form configurations, refer to TYPO3.Form package to create custom fields
+
+* change the form path in setting.yaml to your form path
+
+
+```
+    TYPO3:
+      Form:
+        yamlPersistenceManager:
+          savePath: 'resource://Lelesys.Plugin.ContactForm/Private/Form/'
+```
+
+
+* administrator can see the list of forms and its posted data details in contact form backend module
