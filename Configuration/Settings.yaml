@@ -33,7 +33,7 @@ TYPO3:
             label: Contact Forms
             controller: \Lelesys\Plugin\ContactForm\Controller\Module\ContactForm\ContactListController
             description: 'List all contacted form'
-            icon: 'resource://Lelesys.Plugin.ContactForm/Public/Images/Icons/contact.png'
+            icon: 'icon-envelope-alt'
             actions:
               index:
                 label: 'Show Contact list'
