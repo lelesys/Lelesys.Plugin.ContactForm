@@ -12,7 +12,7 @@ namespace Lelesys\Plugin\ContactForm\Controller\Module\ContactForm;
 
 use TYPO3\Flow\Annotations as Flow;
 
-class ContactListController extends \TYPO3\Neos\Controller\Module\AbstractModuleController {
+class ContactListController extends \TYPO3\Neos\Controller\Module\StandardController {
 
 	/**
 	 * @Flow\Inject
