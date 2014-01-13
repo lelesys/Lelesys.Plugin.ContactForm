@@ -1,13 +1,11 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
-<div class="neos-content container well">
-	<ul class="breadcrumb">
-		<f:for each="{moduleBreadcrumb}" key="path" as="name" iteration="iterator">
-			<li>
-			<neos:link.module path="{path}">{name}</neos:link.module>
-			<f:if condition="{iterator.isLast}"><f:else><span class="divider">&gt;</span></f:else></f:if>
-			</li>
-		</f:for>
-	</ul>
+<div class="neos-content neos-container-fluid">
+	<f:for each="{moduleBreadcrumb}" key="path" as="name" iteration="iterator">
+		<li>
+		<neos:link.module path="{path}">{name}</neos:link.module>
+		<f:if condition="{iterator.isLast}"><f:else><span class="divider">&gt;</span></f:else></f:if>
+		</li>
+	</f:for>
 	<f:render section="Content" />
 </div>
 <script src="{f:uri.resource(path: 'resource://Lelesys.Plugin.ContactForm/Public/JavaScript/formBackend.js')}"></script>

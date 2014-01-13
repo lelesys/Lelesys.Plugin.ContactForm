@@ -1,0 +1,12 @@
+#                                                                        #
+# Security policy for the Lelesys.Plugin.ContactForm                     #
+#                                                                        #
+
+resources:
+  methods:
+    Lelesys_Plugin_ContactForm_ContactAccess: 'method(Lelesys\Plugin\ContactForm\Controller\Module\ContactForm\ContactListController->(index|listFormPosts|show)Action())'
+
+acls:
+  Everybody:
+    methods:
+      Lelesys_Plugin_ContactForm_ContactAccess: GRANT

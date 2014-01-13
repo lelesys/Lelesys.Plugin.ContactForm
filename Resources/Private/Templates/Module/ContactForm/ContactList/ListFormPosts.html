@@ -2,11 +2,11 @@
 <f:layout name="Default" />
 
 <f:section name="Content">
-	<h1>Form Posts: {formIdentifier}</h1>
-	<div class="row neos-module-container indented">
+	<legend>Form Posts: {formIdentifier}</legend>
+	<div class="neos-content neos-container-fluid">
 		<f:if condition="{formPosts}">
 			<f:then>
-				<table class="table">
+				<table class="neos-table">
 					<thead>
 					</thead>
 					<tbody>
@@ -29,7 +29,7 @@
 							</f:for>
 							<td>
 								<div class="pull-right">
-									<f:link.action action="show" arguments="{formPost: formPost, formIdentifier: formIdentifier}" class="btn neos-button" title="Click to view">
+									<f:link.action action="show" arguments="{formPost: formPost, formIdentifier: formIdentifier}" class="neos-btn neos-button" title="Click to view">
 										<i class="icon-info-sign icon-white"></i>
 									</f:link.action>
 								</div>

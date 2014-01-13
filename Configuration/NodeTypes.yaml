@@ -1,10 +1,9 @@
 
 'Lelesys.Plugin.ContactForm:ContactForm':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    - 'TYPO3.Neos:Plugin'
   ui:
     label: 'Lelesys Contact Form'
-    group: Plugins
     inlineEditable: true
     icon: 'icon-puzzle-piece'
     inspector:
@@ -24,6 +23,11 @@
     formName:
       type: string
       defaultValue: 'Default Form'
+      ui:
+        label: 'Form Name'
+        inspector:
+          group: contactform
+        reloadIfChanged: true
 'Lelesys.Plugin.ContactForm:FormPost':
   superTypes:
     - 'TYPO3.Neos:Content'

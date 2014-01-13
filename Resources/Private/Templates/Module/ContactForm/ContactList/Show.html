@@ -3,16 +3,28 @@
 <f:section name="subtitle">
 </f:section>
 <f:section name="Content">
-	<div class="row neos-module-container">
-		<div class="span5">
+	<div class="neos-row neos-module-container">
+		<div class="neos-span7">
 			<legend>{formIdentifier}</legend>
 			<br />
-			<f:for each="{formPost.properties}" key="label" as="value">
-				<p>
-					<label>{label}</label>
-					{value}
-				</p>
-			</f:for>
+			<table class="neos-info-table">
+				<f:for each="{formPost.properties}" key="label" as="value">
+					<f:if condition="{label} == 'postDateTime'">
+						<f:then>
+							<tr>
+								<th>{label}</th>
+								<td><f:format.date format="d.m.Y">@{value}</f:format.date></td>
+							</tr>
+						</f:then>
+						<f:else>
+							<tr>
+								<th>{label}</th>
+								<td>{value}</td>
+							</tr>
+						</f:else>
+					</f:if>
+				</f:for>
+			</table>
 		</div>
 	</div>
 </f:section>

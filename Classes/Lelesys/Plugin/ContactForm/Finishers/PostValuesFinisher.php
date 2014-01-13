@@ -45,6 +45,7 @@ class PostValuesFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		foreach ($formValues as $propertyName => $value) {
 			$postNode->setProperty($propertyName, $value);
 		}
+		$postNode->setProperty('postDateTime', time());
 	}
 
 }

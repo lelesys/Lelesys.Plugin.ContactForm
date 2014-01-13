@@ -2,17 +2,12 @@
 <f:layout name="Default" />
 
 <f:section name="Content">
-	<h1>Contact Form List</h1>
-		<div class="row neos-module-container indented">
+	<legeng>Contact Form List</legend>
+	<div class="neos-content neos-container-fluid">
 			<f:if condition="{forms}">
 				<f:then>
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Form Name</th>
-								<th>&nbsp;</th>
-							</tr>
-						</thead>
+					<p>Form Name</p>
+					<table class="neos-table">
 						<tbody>
 							<f:for each="{forms}" as="form">
 								<tr>
@@ -28,5 +23,5 @@
 					<p>No forms for this site.</p>
 				</f:else>
 			</f:if>
-		</div>
+	</div>
 </f:section>
