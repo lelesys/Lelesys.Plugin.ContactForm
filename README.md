@@ -3,7 +3,7 @@ Lelesys ContactForm Plugin
 
 This plugin adds ContactForm to your websites.
 
-Important note: Initial package development was done when TYPO3 Neos was at alpha3/4. We are working hard continuously to get this to work perfectly and to beautify source code using best practices/concepts of Flow/Neos. Stay tuned!
+##### Important note: Initial package development was done when TYPO3 Neos was at alpha3/4. We are working hard continuously to get this to work perfectly and to beautify source code using best practices/concepts of Flow/Neos. Stay tuned!
 
 
 Quick start
