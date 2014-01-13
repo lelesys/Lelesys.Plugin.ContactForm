@@ -26,6 +26,9 @@ TYPO3:
             options: {}
 
   Neos:
+    typoScript:
+      autoInclude:
+        'Lelesys.Plugin.ContactForm': TRUE
     modules:
       administration:
         submodules:
