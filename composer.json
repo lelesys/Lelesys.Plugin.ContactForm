@@ -11,10 +11,9 @@
 		}
 	],
 	"require": {
-		"typo3/flow":"2.1.*",
-		"typo3/neos":"1.0.*",
-		"typo3/swiftmailer": "4.1.5",
-		"lelesys/captcha": "1.0.1"
+		"typo3/neos":"*",
+		"typo3/swiftmailer": "*",
+		"lelesys/captcha": "*"
 	},
 	"autoload":{
 		"psr-0":{
