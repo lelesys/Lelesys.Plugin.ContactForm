@@ -11,6 +11,8 @@ namespace Lelesys\Plugin\ContactForm\Controller\Module\ContactForm;
  *                                                                         */
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\TYPO3CR\Domain\Factory\NodeFactory;
+use TYPO3\TYPO3CR\Domain\Service\ContextFactory;
 
 class ContactListController extends \TYPO3\Neos\Controller\Module\AbstractModuleController {
 
@@ -20,6 +22,17 @@ class ContactListController extends \TYPO3\Neos\Controller\Module\AbstractModule
 	 */
 	protected $nodeDataRepository;
 
+	/**
+	 * @Flow\Inject
+	 * @var ContextFactory
+	 */
+	protected $contextFactory;
+
+	/**
+	 * @Flow\Inject
+	 * @var NodeFactory
+	 */
+	protected $nodeFactory;
 
 	/**
 	 * Returns the contact form list
@@ -28,27 +41,34 @@ class ContactListController extends \TYPO3\Neos\Controller\Module\AbstractModule
 	 */
 	public function indexAction() {
 		$forms = $this->nodeDataRepository->findByNodeType('Lelesys.Plugin.ContactForm:ContactForm');
-
-		$this->view->assign('forms', $forms);
+		$formNodes = array();
+		$context = $this->contextFactory->create(
+			array('workspaceName' => 'live')
+		);
+		foreach($forms as $form) {
+			$node = $this->nodeFactory->createFromNodeData($form, $context);
+			$formNodes[] = $node;
+		}
+		$this->view->assign('forms', $formNodes);
 	}
 
 	/**
 	 * Returns the form post values
 	 *
-	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeData $formNode
+	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeInterface $formNode
 	 * @return void
 	 */
-	public function listFormPostsAction(\TYPO3\TYPO3CR\Domain\Model\NodeData $formNode) {
+	public function listFormPostsAction(\TYPO3\TYPO3CR\Domain\Model\NodeInterface $formNode) {
 		$this->view->assignMultiple(array ('formIdentifier' => $formNode->getProperty('formIdentifier'), 'formPosts' => $formNode->getChildNodes('Lelesys.Plugin.ContactForm:FormPost')));
 	}
 
 	/**
 	 * Shows the form post detail view
 	 *
-	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeData $formPost
+	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeInterface $formPost
 	 * @param string $formIdentifier The form identifier
 	 */
-	public function showAction(\TYPO3\TYPO3CR\Domain\Model\NodeData $formPost, $formIdentifier) {
+	public function showAction(\TYPO3\TYPO3CR\Domain\Model\NodeInterface $formPost, $formIdentifier) {
 		$this->view->assignMultiple(array('formPost' => $formPost, 'formIdentifier' => $formIdentifier));
 	}
 }
