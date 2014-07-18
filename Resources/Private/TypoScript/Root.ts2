@@ -4,9 +4,23 @@ prototype(Lelesys.Plugin.ContactForm:ContactForm) {
 	templatePath = 'resource://Lelesys.Plugin.ContactForm/Private/Templates/TypoScript/ContactForm.html'
 	formIdentifier = ${q(node).property('formIdentifier')}
 	formIdentifier2 = ${q(node).property('formIdentifier')}
+	@cache {
+		mode = 'uncached'
+		context {
+			1 = 'node'
+			2 = 'documentNode'
+		}
+	}
 }
 
 prototype(Lelesys.Plugin.ContactForm:FormPost) < prototype(TYPO3.TypoScript:Template)
 prototype(Lelesys.Plugin.ContactForm:FormPost) {
 	templatePath = 'resource://Lelesys.Plugin.ContactForm/Private/Templates/TypoScript/PostForm.html'
+	@cache {
+		mode = 'uncached'
+		context {
+			1 = 'node'
+			2 = 'documentNode'
+		}
+	}
 }
