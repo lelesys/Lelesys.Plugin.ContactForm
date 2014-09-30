@@ -12,7 +12,7 @@
 							<f:for each="{forms}" as="form">
 								<tr>
 									<td>
-										<f:link.action action="listFormPosts" arguments="{formNode: form}" title="List form posts">{form.properties.formName}</f:link.action>
+										<f:link.action action="listFormPosts" arguments="{path: form.path}" title="List form posts">{form.properties.formName}</f:link.action>
 									</td>
 								</tr>
 							</f:for>
