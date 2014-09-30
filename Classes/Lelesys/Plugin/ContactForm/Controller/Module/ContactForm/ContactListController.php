@@ -55,11 +55,12 @@ class ContactListController extends \TYPO3\Neos\Controller\Module\AbstractModule
 	/**
 	 * Returns the form post values
 	 *
-	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeInterface $formNode
+	 * @param string $path Absolute path of the node
 	 * @return void
 	 */
-	public function listFormPostsAction(\TYPO3\TYPO3CR\Domain\Model\NodeInterface $formNode) {
+	public function listFormPostsAction($path) {
 		$context = $this->contextFactory->create(array('workspaceName' => 'live'));
+		$formNode = $this->nodeDataRepository->findOneByPath($path, $context->getWorkspace());
 		$this->view->assignMultiple(array ('formIdentifier' => $formNode->getProperty('formIdentifier'), 'formPosts' => $this->nodeDataRepository->findByParentAndNodeTypeRecursively($formNode->getPath(), 'Lelesys.Plugin.ContactForm:FormPost', $context->getWorkspace())));
 	}
 
