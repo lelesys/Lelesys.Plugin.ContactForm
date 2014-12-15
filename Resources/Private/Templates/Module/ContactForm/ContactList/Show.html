@@ -4,7 +4,7 @@
 </f:section>
 <f:section name="Content">
 	<div class="neos-row neos-module-container">
-		<div class="neos-span7">
+		<div class="neos-span12">
 			<legend>{formIdentifier}</legend>
 			<br />
 			<table class="neos-info-table">
@@ -17,14 +17,22 @@
 							</tr>
 						</f:then>
 						<f:else>
-							<tr>
-								<th>{label}</th>
-								<td>{value}</td>
-							</tr>
+							<f:if condition="{0: label} != {0: 'message'}">
+								<f:then>
+									<tr>
+										<th>{label}</th>
+										<td>{value}</td>
+									</tr>
+								</f:then>
+							</f:if>
+
 						</f:else>
 					</f:if>
 				</f:for>
 			</table>
+			<p>
+				<label><b>Message:</b></label>{formPost.properties.message}
+			</p>
 		</div>
 	</div>
 </f:section>
