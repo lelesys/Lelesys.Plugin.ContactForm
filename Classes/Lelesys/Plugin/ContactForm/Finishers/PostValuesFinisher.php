@@ -40,8 +40,7 @@ class PostValuesFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		$formValues = $this->finisherContext->getFormValues();
 		$formNode = $this->formRegistry->getFormNode($this->finisherContext->getFormRuntime()->getIdentifier());
 		$slug = uniqid('post');
-		$postNode = $formNode->createNode($slug, $this->nodeTypeManager->getNodeType('Lelesys.Plugin.ContactForm:FormPost'));
-
+		$postNode = $formNode->getParent()->createNode($slug, $this->nodeTypeManager->getNodeType('Lelesys.Plugin.ContactForm:FormPost'));
 		foreach ($formValues as $propertyName => $value) {
 			$postNode->setProperty($propertyName, $value);
 		}

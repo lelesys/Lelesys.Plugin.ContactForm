@@ -61,7 +61,7 @@ class ContactListController extends \TYPO3\Neos\Controller\Module\AbstractModule
 	public function listFormPostsAction($path) {
 		$context = $this->contextFactory->create(array('workspaceName' => 'live'));
 		$formNode = $this->nodeDataRepository->findOneByPath($path, $context->getWorkspace());
-		$this->view->assignMultiple(array ('formIdentifier' => $formNode->getProperty('formIdentifier'), 'formPosts' => $this->nodeDataRepository->findByParentAndNodeTypeRecursively($formNode->getPath(), 'Lelesys.Plugin.ContactForm:FormPost', $context->getWorkspace())));
+		$this->view->assignMultiple(array ('formIdentifier' => $formNode->getProperty('formIdentifier'), 'formPosts' => $this->nodeDataRepository->findByParentAndNodeTypeRecursively($formNode->getParentPath(), 'Lelesys.Plugin.ContactForm:FormPost', $context->getWorkspace())));
 	}
 
 	/**

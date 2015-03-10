@@ -28,6 +28,7 @@
         inspector:
           group: contactform
         reloadIfChanged: true
+
 'Lelesys.Plugin.ContactForm:FormPost':
   superTypes:
     - 'TYPO3.Neos:Content'
