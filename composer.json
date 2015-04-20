@@ -11,9 +11,9 @@
 		}
 	],
 	"require": {
-		"typo3/neos":"*",
-		"typo3/swiftmailer": "*",
-		"lelesys/captcha": "*"
+		"typo3/neos":"dev-master",
+		"typo3/swiftmailer": "dev-master",
+		"lelesys/captcha": "dev-master"
 	},
 	"autoload":{
 		"psr-0":{
