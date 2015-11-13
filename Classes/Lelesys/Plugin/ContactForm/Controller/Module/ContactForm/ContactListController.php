@@ -44,7 +44,7 @@ class ContactListController extends \TYPO3\Neos\Controller\Module\AbstractModule
 		$formNodes = array();
 		foreach($forms as $form) {
 			$context = $this->contextFactory->create(
-				array('workspaceName' => 'live', 'dimensions' => $$form->getDimensionValues())
+				array('workspaceName' => 'live', 'dimensions' => $form->getDimensionValues())
 			);
 			$node = $this->nodeFactory->createFromNodeData($form, $context);
 			$formNodes[] = $node;
