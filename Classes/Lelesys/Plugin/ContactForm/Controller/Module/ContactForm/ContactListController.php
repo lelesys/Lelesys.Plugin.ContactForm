@@ -42,10 +42,10 @@ class ContactListController extends \TYPO3\Neos\Controller\Module\AbstractModule
 	public function indexAction() {
 		$forms = $this->nodeDataRepository->findByNodeType('Lelesys.Plugin.ContactForm:ContactForm');
 		$formNodes = array();
-		$context = $this->contextFactory->create(
-			array('workspaceName' => 'live')
-		);
 		foreach($forms as $form) {
+			$context = $this->contextFactory->create(
+				array('workspaceName' => 'live', 'dimensions' => $$form->getDimensionValues())
+			);
 			$node = $this->nodeFactory->createFromNodeData($form, $context);
 			$formNodes[] = $node;
 		}
