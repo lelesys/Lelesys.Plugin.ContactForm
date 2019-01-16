@@ -1,21 +1,4 @@
 
-TYPO3:
-  Neos:
-    typoScript:
-      autoInclude:
-        Lelesys.Plugin.ContactForm: true
-    modules:
-      administration:
-        submodules:
-          contactforms:
-            label: 'Contact Forms'
-            controller: \Lelesys\Plugin\ContactForm\Controller\Module\ContactForm\ContactListController
-            description: 'List all contacted form'
-            icon: icon-envelope-alt
-            actions:
-              index:
-                label: 'Show Contact list'
-                title: 'Shows contacted form list'
 Lelesys:
   Plugin:
     ContactForm:
@@ -50,3 +33,19 @@ Neos:
           'Lelesys.Plugin.ContactForm:PostValues':
             implementationClassName: Lelesys\Plugin\ContactForm\Finishers\PostValuesFinisher
             options: {  }
+  Neos:
+    typoScript:
+      autoInclude:
+        Lelesys.Plugin.ContactForm: true
+    modules:
+      administration:
+        submodules:
+          contactforms:
+            label: 'Contact Forms'
+            controller: \Lelesys\Plugin\ContactForm\Controller\Module\ContactForm\ContactListController
+            description: 'List all contacted form'
+            icon: icon-envelope-alt
+            actions:
+              index:
+                label: 'Show Contact list'
+                title: 'Shows contacted form list'

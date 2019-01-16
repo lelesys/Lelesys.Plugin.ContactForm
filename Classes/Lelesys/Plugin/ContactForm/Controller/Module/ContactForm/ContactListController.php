@@ -14,7 +14,7 @@ use Neos\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Factory\NodeFactory;
 use TYPO3\TYPO3CR\Domain\Service\ContextFactory;
 
-class ContactListController extends \TYPO3\Neos\Controller\Module\AbstractModuleController {
+class ContactListController extends \Neos\Neos\Controller\Module\AbstractModuleController {
 
 	/**
 	 * @Flow\Inject

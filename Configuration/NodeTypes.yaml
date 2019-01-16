@@ -1,7 +1,7 @@
 
 'Lelesys.Plugin.ContactForm:ContactForm':
   superTypes:
-    'TYPO3.Neos:Plugin': true
+    'Neos.Neos:Plugin': true
   ui:
     label: 'Lelesys Contact Form'
     inlineEditable: true
@@ -30,7 +30,7 @@
         reloadIfChanged: true
 'Lelesys.Plugin.ContactForm:FormPost':
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
   ui:
     label: 'Form Post'
     inlineEditable: true
