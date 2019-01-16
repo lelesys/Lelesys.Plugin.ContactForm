@@ -1,51 +1,52 @@
+
 TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        Lelesys.Plugin.ContactForm: true
+    modules:
+      administration:
+        submodules:
+          contactforms:
+            label: 'Contact Forms'
+            controller: \Lelesys\Plugin\ContactForm\Controller\Module\ContactForm\ContactListController
+            description: 'List all contacted form'
+            icon: icon-envelope-alt
+            actions:
+              index:
+                label: 'Show Contact list'
+                title: 'Shows contacted form list'
+Lelesys:
+  Plugin:
+    ContactForm:
+      node:
+        type: 'Neos.Form:HiddenField'
+        identifier: node
+        defaultValue: ''
+Neos:
   Form:
     yamlPersistenceManager:
       savePath: 'resource://Lelesys.Plugin.ContactForm/Private/Form/'
     presets:
       contactForm:
         title: 'ContactForm Elements'
-        parentPreset: 'default'
+        parentPreset: default
         formElementTypes:
           'Lelesys.Plugin.ContactForm:Captcha':
-            superTypes: ['TYPO3.Form:SingleLineText']
+            superTypes:
+              - 'Neos.Form:SingleLineText'
             renderingOptions:
               templatePathPattern: 'resource://Lelesys.Plugin.ContactForm/Private/Templates/CustomElements/Captcha.html'
           'Lelesys.Plugin.ContactForm:Form':
-            superTypes: ['TYPO3.Form:Form']
-            rendererClassName: 'TYPO3\Form\Core\Renderer\FluidFormRenderer'
+            superTypes:
+              - 'Neos.Form:Form'
+            rendererClassName: Neos\Form\Core\Renderer\FluidFormRenderer
             renderingOptions:
               templatePathPattern: 'resource://Lelesys.Plugin.ContactForm/Private/Templates/CustomElements/Form.html'
-
         validatorPresets:
           'Lelesys.Captcha:Captcha':
-            implementationClassName: 'Lelesys\Captcha\Validators\CaptchaValidator'
+            implementationClassName: Lelesys\Captcha\Validators\CaptchaValidator
         finisherPresets:
           'Lelesys.Plugin.ContactForm:PostValues':
-            implementationClassName: 'Lelesys\Plugin\ContactForm\Finishers\PostValuesFinisher'
-            options: {}
-
-  Neos:
-    typoScript:
-      autoInclude:
-        'Lelesys.Plugin.ContactForm': TRUE
-    modules:
-      administration:
-        submodules:
-          contactforms:
-            label: Contact Forms
-            controller: \Lelesys\Plugin\ContactForm\Controller\Module\ContactForm\ContactListController
-            description: 'List all contacted form'
-            icon: 'icon-envelope-alt'
-            actions:
-              index:
-                label: 'Show Contact list'
-                title: 'Shows contacted form list'
-
-Lelesys:
-  Plugin:
-    ContactForm:
-      node:
-        type: 'TYPO3.Form:HiddenField'
-        identifier: node
-        defaultValue: ''
+            implementationClassName: Lelesys\Plugin\ContactForm\Finishers\PostValuesFinisher
+            options: {  }

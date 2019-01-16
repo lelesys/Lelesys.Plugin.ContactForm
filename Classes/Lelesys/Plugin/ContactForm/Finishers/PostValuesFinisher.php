@@ -15,7 +15,7 @@ use Neos\Flow\Annotations as Flow;
 /**
  * A simple finisher that outputs a given text
  */
-class PostValuesFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
+class PostValuesFinisher extends \Neos\Form\Core\Model\AbstractFinisher {
 
 	/**
 	 * @Flow\Inject
@@ -34,7 +34,7 @@ class PostValuesFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 	 * @see AbstractFinisher::execute()
 	 *
 	 * @return void
-	 * @throws \TYPO3\Form\Exception\FinisherException
+	 * @throws \Neos\Form\Exception\FinisherException
 	 */
 	protected function executeInternal() {
 		$formValues = $this->finisherContext->getFormValues();
