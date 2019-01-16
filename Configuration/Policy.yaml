@@ -4,12 +4,12 @@
 
       
 privilegeTargets:
-  'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
     'Lelesys.Plugin.ContactForm:ContactListController':
       matcher: 'method(Lelesys\Plugin\ContactForm\Controller\Module\ContactForm\ContactListController->(index|listFormPosts|show)Action())'
       
 roles:
-  'TYPO3.Flow:Everybody':
+  'Neos.Flow:Everybody':
     privileges:
       -
         privilegeTarget: 'Lelesys.Plugin.ContactForm:ContactListController'

@@ -10,7 +10,7 @@ namespace Lelesys\Plugin\ContactForm\Finishers;
  * of the License, or (at your option) any later version.                  *
  *                                                                         */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * A simple finisher that outputs a given text

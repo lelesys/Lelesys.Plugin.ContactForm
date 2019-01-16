@@ -10,7 +10,7 @@ namespace Lelesys\Plugin\ContactForm\Controller\Module\ContactForm;
  * of the License, or (at your option) any later version.                  *
  *                                                                         */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\TYPO3CR\Domain\Factory\NodeFactory;
 use TYPO3\TYPO3CR\Domain\Service\ContextFactory;
 

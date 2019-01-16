@@ -15,7 +15,7 @@ renderables:
                 label: Name
                 validators:
                     -
-                        identifier: 'TYPO3.Flow:NotEmpty'
+                        identifier: 'Neos.Flow:NotEmpty'
                 properties:
                     placeholder: name
                 defaultValue: ''
@@ -25,9 +25,9 @@ renderables:
                 label: Email
                 validators:
                     -
-                        identifier: 'TYPO3.Flow:NotEmpty'
+                        identifier: 'Neos.Flow:NotEmpty'
                     -
-                        identifier: 'TYPO3.Flow:EmailAddress'
+                        identifier: 'Neos.Flow:EmailAddress'
                 properties:
                     placeholder: 'e.g lelesys@lelesys.com'
                 defaultValue: ''
@@ -37,7 +37,7 @@ renderables:
                 label: Message
                 validators:
                     -
-                        identifier: 'TYPO3.Flow:NotEmpty'
+                        identifier: 'Neos.Flow:NotEmpty'
                 properties:
                     placeholder: 'message here'
                 defaultValue: ''
@@ -47,7 +47,7 @@ renderables:
                 label: Captcha
                 validators:
                     -
-                        identifier: 'TYPO3.Flow:NotEmpty'
+                        identifier: 'Neos.Flow:NotEmpty'
                     -
                         identifier: 'Lelesys.Captcha:Captcha'
                 properties:
