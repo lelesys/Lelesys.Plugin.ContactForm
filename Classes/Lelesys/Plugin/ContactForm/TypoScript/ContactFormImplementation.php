@@ -16,7 +16,7 @@ use Neos\Flow\Annotations as Flow;
  * ContactForm TypoScript object implementation
  * @Flow\Scope("prototype")
  */
-class ContactFormImplementation extends \TYPO3\TypoScript\TypoScriptObjects\TemplateImplementation {
+class ContactFormImplementation extends \Neos\Fusion\TypoScriptObjects\TemplateImplementation {
 
 	/**
 	 * @Flow\Inject
