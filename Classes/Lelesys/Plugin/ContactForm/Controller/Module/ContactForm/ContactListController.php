@@ -11,14 +11,14 @@ namespace Lelesys\Plugin\ContactForm\Controller\Module\ContactForm;
  *                                                                         */
 
 use Neos\Flow\Annotations as Flow;
-use TYPO3\TYPO3CR\Domain\Factory\NodeFactory;
-use TYPO3\TYPO3CR\Domain\Service\ContextFactory;
+use Neos\ContentRepository\Domain\Factory\NodeFactory;
+use Neos\ContentRepository\Domain\Service\ContextFactory;
 
 class ContactListController extends \Neos\Neos\Controller\Module\AbstractModuleController {
 
 	/**
 	 * @Flow\Inject
-	 * @var \TYPO3\TYPO3CR\Domain\Repository\NodeDataRepository
+	 * @var \Neos\ContentRepository\Domain\Repository\NodeDataRepository
 	 */
 	protected $nodeDataRepository;
 
@@ -67,10 +67,10 @@ class ContactListController extends \Neos\Neos\Controller\Module\AbstractModuleC
 	/**
 	 * Shows the form post detail view
 	 *
-	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeData $formPost
+	 * @param \Neos\ContentRepository\Domain\Model\NodeData $formPost
 	 * @param string $formIdentifier The form identifier
 	 */
-	public function showAction(\TYPO3\TYPO3CR\Domain\Model\NodeData $formPost, $formIdentifier) {
+	public function showAction(\Neos\ContentRepository\Domain\Model\NodeData $formPost, $formIdentifier) {
 		$this->view->assignMultiple(array('formPost' => $formPost, 'formIdentifier' => $formIdentifier));
 	}
 }

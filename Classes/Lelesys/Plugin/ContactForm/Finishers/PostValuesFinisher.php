@@ -25,7 +25,7 @@ class PostValuesFinisher extends \Neos\Form\Core\Model\AbstractFinisher {
 
 	/**
 	 * @Flow\Inject
-	 * @var \TYPO3\TYPO3CR\Domain\Service\NodeTypeManager
+	 * @var \Neos\ContentRepository\Domain\Service\NodeTypeManager
 	 */
 	protected $nodeTypeManager;
 

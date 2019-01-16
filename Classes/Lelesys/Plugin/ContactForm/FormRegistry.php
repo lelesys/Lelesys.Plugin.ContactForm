@@ -28,7 +28,7 @@ class FormRegistry {
 	 * Returns the node associated with the form
 	 *
 	 * @param string $formIdentifier
-	 * @return \TYPO3\TYPO3CR\Domain\Model\NodeInterface
+	 * @return \Neos\ContentRepository\Domain\Model\NodeInterface
 	 */
 	public function getFormNode($formIdentifier) {
 		return $this->formNodes[$formIdentifier];
@@ -38,9 +38,9 @@ class FormRegistry {
 	 * Sets the associated node of the form
 	 *
 	 * @param string $formIdentifier
-	 * @param \TYPO3\TYPO3CR\Domain\Model\NodeInterface $node
+	 * @param \Neos\ContentRepository\Domain\Model\NodeInterface $node
 	 */
-	public function setFormNode($formIdentifier, \TYPO3\TYPO3CR\Domain\Model\NodeInterface $node) {
+	public function setFormNode($formIdentifier, \Neos\ContentRepository\Domain\Model\NodeInterface $node) {
 		$this->formNodes[$formIdentifier] = $node;
 	}
 
