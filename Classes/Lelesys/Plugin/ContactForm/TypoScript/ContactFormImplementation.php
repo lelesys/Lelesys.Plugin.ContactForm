@@ -16,46 +16,51 @@ use Neos\Flow\Annotations as Flow;
  * ContactForm TypoScript object implementation
  * @Flow\Scope("prototype")
  */
-class ContactFormImplementation extends \Neos\Fusion\FusionObjects\TemplateImplementation {
+class ContactFormImplementation extends \Neos\Fusion\FusionObjects\TemplateImplementation
+{
 
-	/**
-	 * @Flow\Inject
-	 * @var \Lelesys\Plugin\ContactForm\FormRegistry
-	 */
-	protected $formRegistry;
+    /**
+     * @Flow\Inject
+     * @var \Lelesys\Plugin\ContactForm\FormRegistry
+     */
+    protected $formRegistry;
 
-	/**
-	 * Form identifier
-	 * @var string
-	 */
-	protected $formIdentifier;
+    /**
+     * Form identifier
+     *
+     * @var string
+     */
+    protected $formIdentifier;
 
-	/**
-	 * Sets the form identifier
-	 * @param string $formIdentifier
-	 */
-	public function setFormIdentifier($formIdentifier) {
-		$this->formIdentifier = $formIdentifier;
-	}
+    /**
+     * Sets the form identifier
+     *
+     * @param string $formIdentifier
+     */
+    public function setFormIdentifier($formIdentifier)
+    {
+        $this->formIdentifier = $formIdentifier;
+    }
 
-	/**
-	 * Returns the form identifier
-	 * @return string
-	 */
-	public function getFormIdentifier() {
-		return $this->tsValue('formIdentifier');
-	}
+    /**
+     * Returns the form identifier
+     *
+     * @return string
+     */
+    public function getFormIdentifier()
+    {
+        return $this->fusionValue('formIdentifier');
+    }
 
-	/**
-	 *
-	 * @return type
-	 */
-	public function evaluate() {
-		$context = $this->getTsRuntime()->getCurrentContext();
-		$this->formRegistry->setFormNode($this->getFormIdentifier(), $context['node']);
-		return parent::evaluate();
-	}
-
+    /**
+     * @return type
+     */
+    public function evaluate()
+    {
+        $context = $this->getRuntime()->getCurrentContext();
+        $this->formRegistry->setFormNode($this->getFormIdentifier(), $context['node']);
+        return parent::evaluate();
+    }
 }
 
 ?>
