@@ -1,4 +1,4 @@
-prototype(Lelesys.Plugin.ContactForm:ContactForm) < prototype(TYPO3.Neos:Content)
+prototype(Lelesys.Plugin.ContactForm:ContactForm) < prototype(Neos.Neos:Content)
 prototype(Lelesys.Plugin.ContactForm:ContactForm) {
 	@class = 'Lelesys\\Plugin\\ContactForm\\TypoScript\\ContactFormImplementation'
 	templatePath = 'resource://Lelesys.Plugin.ContactForm/Private/Templates/TypoScript/ContactForm.html'
