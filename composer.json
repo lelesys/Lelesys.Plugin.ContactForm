@@ -14,7 +14,7 @@
         "neos/neos": "~4.0.0",
         "neos/swiftmailer": "~6.0.0",
         "neos/form": "~4.0",
-        "lelesys/captcha": "@dev"
+        "lelesys/captcha": "~3.0.0"
     },
     "autoload": {
         "psr-0": {
