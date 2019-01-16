@@ -1,8 +1,8 @@
 {
     "name": "lelesys/plugin-contact-form",
     "description": "Contact Form plugin for TYPO3 Neos",
-    "license": "LGPL-3.0+",
-    "type": "typo3-flow-plugin",
+    "license": "LGPL-3.0-or-later",
+    "type": "neos-plugin",
     "authors": [
         {
             "name": "Lelesys Infotech Pvt Ltd, India",
@@ -11,9 +11,10 @@
         }
     ],
     "require": {
-        "typo3/neos": "~2.3.0",
-        "typo3/swiftmailer": "~5.4.2",
-        "lelesys/captcha": "2.3.*"
+        "neos/neos": "~4.0.0",
+        "neos/swiftmailer": "~6.0.0",
+        "neos/form": "~4.0",
+        "lelesys/captcha": "@dev"
     },
     "autoload": {
         "psr-0": {
