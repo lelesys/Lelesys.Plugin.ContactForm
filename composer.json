@@ -13,7 +13,7 @@
 	"require": {
 		"typo3/neos":"2.0.*@beta",
 		"typo3/swiftmailer": "5.4.1",
-		"lelesys/captcha": "dev-master"
+		"lelesys/captcha": "2.3.0"
 	},
 	"autoload":{
 		"psr-0":{
