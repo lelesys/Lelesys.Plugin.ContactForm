@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "neos/neos": "~4.0.0",
+        "neos/neos": "^4.0",
         "neos/swiftmailer": "~6.0.0",
         "neos/form": "~4.0",
         "lelesys/captcha": "~3.0.0"
